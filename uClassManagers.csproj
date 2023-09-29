@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8B52B404-2B12-47EA-812B-192C859BF554}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>uClassManagers</RootNamespace>
+    <AssemblyName>uClassManagers</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\References\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\References\Unturned\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="com.rlabrecque.steamworks.net">
+      <HintPath>..\..\References\Unturned\com.rlabrecque.steamworks.net.dll</HintPath>
+    </Reference>
+    <Reference Include="Rocket.API">
+      <HintPath>..\References\Rocket\Rocket.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Rocket.Core">
+      <HintPath>..\References\Rocket\Rocket.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Rocket.Unturned">
+      <HintPath>..\References\Rocket\Rocket.Unturned.dll</HintPath>
+    </Reference>
+    <Reference Include="SDG.NetTransport">
+      <HintPath>..\..\References\Unturned\SDG.NetTransport.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\References\Unturned\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule">
+      <HintPath>..\..\References\Unturned\UnityEngine.ClothModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\References\Unturned\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\..\References\Unturned\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="uScript.API">
+      <HintPath>..\..\References\uScript2\uScript.API.dll</HintPath>
+    </Reference>
+    <Reference Include="uScript.Core-reference">
+      <HintPath>..\..\References\uScript2\uScript.Core-reference.dll</HintPath>
+    </Reference>
+    <Reference Include="uScript.Module.Main">
+      <HintPath>..\..\References\uScript2\uScript.Module.Main.dll</HintPath>
+    </Reference>
+    <Reference Include="uScript.Unturned-reference">
+      <HintPath>..\..\References\uScript2\uScript.Unturned-reference.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Extras\MetadataChecker\InventoryClassExtension.cs" />
+    <Compile Include="Extras\MetadataChecker\ItemClassExtension.cs" />
+    <Compile Include="Extras\MetadataChecker\MetadataEditorModule.cs" />
+    <Compile Include="Extras\MetadataChecker\PlayerClassExtension.cs" />
+    <Compile Include="Extras\uDateTime\DateTimeOffsetClass.cs" />
+    <Compile Include="Extras\uDateTime\TimeSpanClass.cs" />
+    <Compile Include="Extras\uDateTime\uTimeClass.cs" />
+    <Compile Include="Extras\uFile\DirectoryModule.cs" />
+    <Compile Include="Extras\uFile\FileModuleExtension.cs" />
+    <Compile Include="Extras\uRegularExpressions\RegExClass.cs" />
+    <Compile Include="uClasses\VehicleAssetClass.cs" />
+    <Compile Include="uClasses\ItemStructureAssetClass.cs" />
+    <Compile Include="uClasses\ItemBarricadeAssetClass.cs" />
+    <Compile Include="uClassExtensions\PlayerClassExtension.cs" />
+    <Compile Include="uClassExtensions\StructureClassExtension.cs" />
+    <Compile Include="uClasses\uBarricadeClass.cs" />
+    <Compile Include="Dictionaries\EnumDictionaries.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="uClasses\TriggerEffectParametersClass.cs" />
+    <Compile Include="uClasses\TriggerEffectParametersCSClass.cs" />
+    <Compile Include="uClasses\AssetsClass.cs" />
+    <Compile Include="uClasses\TransformClass.cs" />
+    <Compile Include="uClassExtensions\BarricadeClassExtension.cs" />
+    <Compile Include="uClasses\AnimalClass.cs" />
+    <Compile Include="uClasses\BarricadeDataClass.cs" />
+    <Compile Include="uClasses\uStructureClass.cs" />
+    <Compile Include="uClassExtensions\Vector3ClassExpansion.cs" />
+    <Compile Include="uClassManagers\AnimalManager.cs" />
+    <Compile Include="uClassManagers\BarricadeManager.cs" />
+    <Compile Include="uClassManagers\BeaconManager.cs" />
+    <Compile Include="uClassManagers\ClaimManager.cs" />
+    <Compile Include="uClassManagers\EffectManager.cs" />
+    <Compile Include="uClassManagers\ItemManager.cs" />
+    <Compile Include="uClassManagers\LevelManager.cs" />
+    <Compile Include="uClassManagers\StructureManager.cs" />
+    <Compile Include="uClassExtensions\VehicleClassExtension.cs" />
+    <Compile Include="uClassManagers\VehicleManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Compatibility\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
