@@ -1,5 +1,5 @@
 # uClassManagers
-The module that will ultimately expand uScript2.
+The module that will (ultimately???) expand uScript2.
 
 # Note
 Documentation soon, I promise.
