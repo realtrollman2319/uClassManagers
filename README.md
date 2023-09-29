@@ -18,7 +18,7 @@ I'm free to add suggestions here, if you want something to be added here, make a
 I'm not the developer of uScript2, it's @strlng.
 I can't add syntax, or add more C# syntax (like LINQ) into uScript2.
 
-Modules covered:
+Modules covered:<br/>
 [Console Module](https://discord.com/channels/578652868328947744/843614954514808882/845004018526584843)><br/>
 [EffectManagerExtended](https://discord.com/channels/578652868328947744/843614954514808882/851503692724568094) (We have 2 same but seperate methods for this for compatibility purposes)<br/>
 [VehicleAdvanced](https://discord.com/channels/578652868328947744/843614954514808882/983334949950201886)<br/>
