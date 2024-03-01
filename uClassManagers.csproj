@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,11 +35,15 @@
     <Reference Include="0Harmony">
       <HintPath>..\..\References\0Harmony.dll</HintPath>
     </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\References\Unturned\Assembly-CSharp.dll</HintPath>
+    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\References\Unturned\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="com.rlabrecque.steamworks.net">
       <HintPath>..\..\References\Unturned\com.rlabrecque.steamworks.net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Rocket.API">
       <HintPath>..\References\Rocket\Rocket.API.dll</HintPath>
@@ -75,8 +80,9 @@
     <Reference Include="uScript.API">
       <HintPath>..\..\References\uScript2\uScript.API.dll</HintPath>
     </Reference>
-    <Reference Include="uScript.Core-reference">
-      <HintPath>..\..\References\uScript2\uScript.Core-reference.dll</HintPath>
+    <Reference Include="uScript.Core-reference, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\References\uScript2\uScript.Core-reference.dll</HintPath>
     </Reference>
     <Reference Include="uScript.Module.Main">
       <HintPath>..\..\References\uScript2\uScript.Module.Main.dll</HintPath>
@@ -86,46 +92,95 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extras\MetadataChecker\InventoryClassExtension.cs" />
-    <Compile Include="Extras\MetadataChecker\ItemClassExtension.cs" />
-    <Compile Include="Extras\MetadataChecker\MetadataEditorModule.cs" />
-    <Compile Include="Extras\MetadataChecker\PlayerClassExtension.cs" />
-    <Compile Include="Extras\uDateTime\DateTimeOffsetClass.cs" />
-    <Compile Include="Extras\uDateTime\TimeSpanClass.cs" />
-    <Compile Include="Extras\uDateTime\uTimeClass.cs" />
-    <Compile Include="Extras\uFile\DirectoryModule.cs" />
-    <Compile Include="Extras\uFile\FileModuleExtension.cs" />
-    <Compile Include="Extras\uRegularExpressions\RegExClass.cs" />
-    <Compile Include="uClasses\VehicleAssetClass.cs" />
-    <Compile Include="uClasses\ItemStructureAssetClass.cs" />
-    <Compile Include="uClasses\ItemBarricadeAssetClass.cs" />
-    <Compile Include="uClassExtensions\PlayerClassExtension.cs" />
-    <Compile Include="uClassExtensions\StructureClassExtension.cs" />
-    <Compile Include="uClasses\uBarricadeClass.cs" />
-    <Compile Include="Dictionaries\EnumDictionaries.cs" />
+    <Compile Include="uClassManagers\Classes\Assets\AnimalAsset.cs" />
+    <Compile Include="uClassManagers\Classes\Assets\Asset.cs" />
+    <Compile Include="uClassManagers\Classes\Assets\EffectAsset.cs" />
+    <Compile Include="uClassManagers\Classes\Assets\VehicleAsset.cs" />
+    <Compile Include="uClassManagers\Classes\Assets\ItemStructureAsset.cs" />
+    <Compile Include="uClassManagers\Classes\Assets\ItemBarricadeAsset.cs" />
+    <Compile Include="uClassManagers\ArrayTool.cs" />
+    <Compile Include="uClassManagers\Classes\CharacterController.cs" />
+    <Compile Include="uClassManagers\Classes\HotkeyInfo.cs" />
+    <Compile Include="uClassManagers\Classes\InputInfo.cs" />
+    <Compile Include="uClassManagers\Classes\Interactable.cs" />
+    <Compile Include="uClassManagers\Classes\Interactable2.cs" />
+    <Compile Include="uClassManagers\Classes\InteractableStorage.cs" />
+    <Compile Include="uClassManagers\Classes\PlayerQuest.cs" />
+    <Compile Include="uClassManagers\Classes\PlayerQuestFlag.cs" />
+    <Compile Include="uClassManagers\Classes\Assets\QuestAsset.cs" />
+    <Compile Include="uClassManagers\Classes\Rk4SpringQ.cs" />
+    <Compile Include="uClassManagers\Classes\SafezoneNode.cs" />
+    <Compile Include="uClassManagers\Classes\StructureData.cs" />
+    <Compile Include="uClassManagers\Classes\TurretInfo.cs" />
+    <Compile Include="uClassManagers\Classes\InteractableVehicle.cs" />
+    <Compile Include="uClassManagers\Classes\Useable.cs" />
+    <Compile Include="uClassManagers\Classes\uZombie.cs" />
+    <Compile Include="uClassManagers\Classes\PlayerStateUpdate.cs" />
+    <Compile Include="uClassManagers\Classes\WheelFrictionCurve.cs" />
+    <Compile Include="uClassManagers\ColorTool.cs" />
+    <Compile Include="uClassManagers\Extensions\PlayerClass.cs" />
+    <Compile Include="uClassManagers\Extensions\PlayerEffectsClass.cs" />
+    <Compile Include="uClassManagers\Module.cs" />
+    <Compile Include="uClassManagers\Modules\AssetsModule.cs" />
+    <Compile Include="uClassManagers\Classes\Assets\ItemClothingAsset.cs" />
+    <Compile Include="uClassManagers\Classes\ItemsClass.cs" />
+    <Compile Include="uClassManagers\Classes\Passenger.cs" />
+    <Compile Include="uClassManagers\Classes\PlayerCrafting.cs" />
+    <Compile Include="uClassManagers\Classes\PlayerSkills.cs" />
+    <Compile Include="uClassManagers\Classes\Skill.cs" />
+    <Compile Include="uClassManagers\Classes\SpecialitySkillPair.cs" />
+    <Compile Include="uClassManagers\Classes\uVector3.cs" />
+    <Compile Include="uClassManagers\Modules\MathfModule.cs" />
+    <Compile Include="uClassManagers\Classes\ItemJar.cs" />
+    <Compile Include="uClassManagers\Classes\uItem.cs" />
+    <Compile Include="uClassManagers\Extensions\StructureClass.cs" />
+    <Compile Include="uClassManagers\Classes\uBarricade.cs" />
+    <Compile Include="uClassManagers\EnumTool.cs" />
+    <Compile Include="uClassManagers\Modules\DirectoryModule.cs" />
+    <Compile Include="uClassManagers\Modules\uFileModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="uClasses\TriggerEffectParametersClass.cs" />
-    <Compile Include="uClasses\TriggerEffectParametersCSClass.cs" />
-    <Compile Include="uClasses\AssetsClass.cs" />
-    <Compile Include="uClasses\TransformClass.cs" />
-    <Compile Include="uClassExtensions\BarricadeClassExtension.cs" />
-    <Compile Include="uClasses\AnimalClass.cs" />
-    <Compile Include="uClasses\BarricadeDataClass.cs" />
-    <Compile Include="uClasses\uStructureClass.cs" />
-    <Compile Include="uClassExtensions\Vector3ClassExpansion.cs" />
-    <Compile Include="uClassManagers\AnimalManager.cs" />
-    <Compile Include="uClassManagers\BarricadeManager.cs" />
-    <Compile Include="uClassManagers\BeaconManager.cs" />
-    <Compile Include="uClassManagers\ClaimManager.cs" />
-    <Compile Include="uClassManagers\EffectManager.cs" />
-    <Compile Include="uClassManagers\ItemManager.cs" />
-    <Compile Include="uClassManagers\LevelManager.cs" />
-    <Compile Include="uClassManagers\StructureManager.cs" />
-    <Compile Include="uClassExtensions\VehicleClassExtension.cs" />
-    <Compile Include="uClassManagers\VehicleManager.cs" />
+    <Compile Include="uClassManagers\Classes\TriggerEffectParameters.cs" />
+    <Compile Include="uClassManagers\Classes\Transform.cs" />
+    <Compile Include="uClassManagers\Extensions\BarricadeClass.cs" />
+    <Compile Include="uClassManagers\Classes\uAnimal.cs" />
+    <Compile Include="uClassManagers\Classes\BarricadeData.cs" />
+    <Compile Include="uClassManagers\Classes\uStructure.cs" />
+    <Compile Include="uClassManagers\Extensions\Vector3Class.cs" />
+    <Compile Include="uClassManagers\Managers\AnimalManager.cs" />
+    <Compile Include="uClassManagers\Managers\BarricadeManager.cs" />
+    <Compile Include="uClassManagers\Managers\BeaconManager.cs" />
+    <Compile Include="uClassManagers\Managers\ClaimManager.cs" />
+    <Compile Include="uClassManagers\Managers\EffectManager.cs" />
+    <Compile Include="uClassManagers\Managers\ItemManager.cs" />
+    <Compile Include="uClassManagers\Managers\LevelManager.cs" />
+    <Compile Include="uClassManagers\Managers\StructureManager.cs" />
+    <Compile Include="uClassManagers\Extensions\VehicleClass.cs" />
+    <Compile Include="uClassManagers\Managers\VehicleManager.cs" />
+    <Compile Include="uClassManagers\Extensions\ItemClass.cs" />
+    <Compile Include="uClassManagers\Classes\InteractableItem.cs" />
+    <Compile Include="uClassManagers\Classes\Assets\ItemAsset.cs" />
+    <Compile Include="uClassManagers\Classes\PlayerAnimator.cs" />
+    <Compile Include="uClassManagers\Classes\PlayerClothing.cs" />
+    <Compile Include="uClassManagers\Classes\PlayerEquipment.cs" />
+    <Compile Include="uClassManagers\Classes\PlayerInput.cs" />
+    <Compile Include="uClassManagers\Classes\PlayerInteract.cs" />
+    <Compile Include="uClassManagers\Classes\PlayerInventory.cs" />
+    <Compile Include="uClassManagers\Classes\PlayerLife.cs" />
+    <Compile Include="uClassManagers\Classes\PlayerLook.cs" />
+    <Compile Include="uClassManagers\Classes\PlayerMovement.cs" />
+    <Compile Include="uClassManagers\Classes\PlayerQuests.cs" />
+    <Compile Include="uClassManagers\Classes\PlayerStance.cs" />
+    <Compile Include="uClassManagers\Classes\PlayerVoice.cs" />
+    <Compile Include="uClassManagers\Classes\PlayerWorkzone.cs" />
+    <Compile Include="uClassManagers\Classes\uPlayer.cs" />
+    <Compile Include="uClassManagers\Classes\Wheel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Compatibility\" />
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="z_Misc\Events\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
