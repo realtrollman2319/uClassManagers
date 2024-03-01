@@ -23,7 +23,7 @@ namespace uClassManagers.Extensions
             EffectManager.sendUIEffectImageURL(key, playerEffects.Player.channel.owner.transportConnection, reliable, childName, url, shouldCache, forceRefresh);
         }
 
-        [ScriptFunction("sendisibility")]
+        [ScriptFunction("sendVisibility")]
         public static void SendVisibility([ScriptInstance] ExpressionValue instance, short key, string childName, bool visible, bool reliable = true)
         {
             if (!(instance.Data is PlayerEffectsClass playerEffects)) return;
