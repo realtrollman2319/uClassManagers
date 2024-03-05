@@ -30,7 +30,7 @@ namespace uClassManagers.Classes
         [ScriptConstructor]
         public TriggerEffectParametersClass(string guid, Vector3Class position, float relevantDistance = 128, bool reliable = true, bool shouldReplicate = true, bool wasInstigatedByPlayer = false)
         {
-            triggerEffectParameters = new TriggerEffectParameters(Guid.Parse(guid))
+            triggerEffectParameters = new TriggerEffectParameters(GuidTool.ParseGuid(guid))
             {
                 position = position.Vector3,
                 scale = Vector3.one,

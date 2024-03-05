@@ -13,6 +13,11 @@ namespace uClassManagers
         QUEST
     }
 
+    public enum InteractableType
+    {
+        STORAGE
+    }
+
     public static class EnumTool
     {
         public static UnturnedEnum<AssetType> assetTypes;
@@ -37,6 +42,7 @@ namespace uClassManagers
         public static UnturnedEnum<EDragCoordinate> dragCoordinates;
         public static UnturnedEnum<EDamageOrigin> damageOrigins;
         public static UnturnedEnum<ERaycastInfoUsage> raycastInfoUsages;
+        public static UnturnedEnum<InteractableType> interactableTypes;
         // public static UnturnedEnum<ETestEnum> testEnums;
 
         public static void CreateEnums()
@@ -63,6 +69,7 @@ namespace uClassManagers
             dragCoordinates = new UnturnedEnum<EDragCoordinate>();
             damageOrigins = new UnturnedEnum<EDamageOrigin>();
             raycastInfoUsages = new UnturnedEnum<ERaycastInfoUsage>();
+            interactableTypes = new UnturnedEnum<InteractableType>();
         }
     }
 
@@ -70,17 +77,15 @@ namespace uClassManagers
     {
         public TEnum? GetEnum(string input)
         {
-            if (Enum.TryParse(input, true, out TEnum result))
+            if (Enum.TryParse(input.ToLower(), true, out TEnum result))
             {
                 return result;
             }
             else
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("[uClassManagers] Invalid enum specified! It must be one of the following:");
-                Console.WriteLine(string.Join(", ", Enum.GetNames(typeof(TEnum))).ToArray());
-                Console.WriteLine("[uClassManagers] Input dosen't need to be case sensitive.");
-                Console.ResetColor();
+                string enums = string.Join(separator: ", ", Enum.GetNames(typeof(TEnum)));
+                C.WriteError("Invalid enum specified! Input dosen't need to be case sensitive, and it must be one of the following:");
+                C.WriteInfo(enums);
                 return null;
             }
         }

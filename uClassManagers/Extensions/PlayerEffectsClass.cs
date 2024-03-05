@@ -13,7 +13,7 @@ namespace uClassManagers.Extensions
         public static void ClearUIByGuid([ScriptInstance] ExpressionValue instance, string guid)
         {
             if (!(instance.Data is PlayerEffectsClass playerEffects)) return;
-            EffectManager.ClearEffectByGuid(Guid.Parse(guid), playerEffects.Player.channel.owner.transportConnection);
+            EffectManager.ClearEffectByGuid(GuidTool.ParseGuid(guid), playerEffects.Player.channel.owner.transportConnection);
         }
 
         [ScriptFunction("sendImage")]

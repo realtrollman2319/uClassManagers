@@ -1,12 +1,50 @@
-﻿using Newtonsoft.Json;
+﻿using Rocket.Core.Logging;
+using SDG.Unturned;
 using System;
-using System.Net.Http;
 using System.Reflection;
-using System.Threading.Tasks;
 using uScript.Unturned;
 
 namespace uClassManagers
 {
+    public static class C
+    {
+        public static void PrintLine(string message, ConsoleColor color = ConsoleColor.Gray, ConsoleColor backgroundColor = ConsoleColor.Black)
+        {
+            Console.BackgroundColor = backgroundColor;
+            Console.ForegroundColor = color;
+            Console.WriteLine(message);
+            Console.ResetColor();
+        }
+
+        public static void WriteLine(string message) // This is for debugging
+        {
+            PrintLine($"[uClassManagers] {message}", ConsoleColor.DarkGray);
+            Logs.printLine($"[Debug] {message}");
+            Logger.LogError(message);
+        }
+
+        public static void WriteInfo(string message)
+        {
+            PrintLine($"[uClassManagers] {message}", ConsoleColor.Cyan);
+            Logs.printLine($"[Info] {message}");
+            Logger.LogError(message);
+
+        }
+        public static void WriteWarn(string message)
+        {
+            PrintLine($"[uClassManagers] {message}", ConsoleColor.Yellow);
+            Logs.printLine($"[Warning] {message}");
+            Logger.LogError(message);
+        }
+
+        public static void WriteError(string message)
+        {
+            PrintLine($"[uClassManagers] {message}", ConsoleColor.Red);
+            Logs.printLine($"[Error] {message}");
+            Logger.LogError(message);
+        }
+    }
+
     public partial class Module : ScriptModuleBase
     {
         /*
@@ -50,6 +88,7 @@ namespace uClassManagers
             */
 
             // Create classes for Enums to use
+            C.WriteInfo($"uClassManagers loaded! Version: {Assembly.GetExecutingAssembly().GetName().Version}");
             EnumTool.CreateEnums();
         }
     }

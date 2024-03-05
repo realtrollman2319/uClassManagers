@@ -20,9 +20,7 @@ namespace uClassManagers
                 }
                 else
                 {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("[uClassManagers] One of the array elements failed to parse! ushorts must be 0 to 65535 and not a string or an object. Check the array elements and try again.");
-                    Console.ResetColor();
+                    C.WriteError("One of the array elements failed to parse! ushorts must be 0 to 65535 and not a string or an object. Check the array elements and try again.");
                     return null;
                 }
             }
@@ -46,12 +44,11 @@ namespace uClassManagers
                     }
                     else
                     {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("[uClassManagers] One of the array elements failed to parse! ushorts must be 0 to 65535 and not a string or an object. Check the array elements and try again.");
-                        Console.ResetColor();
+                        C.WriteError("One of the array elements failed to parse! Unsigned shorts must be 0 to 65535 and not a string or an object. Check the array elements and try again.");
                         return null;
                     }
                 }
+
                 list.Add(col.ToArray());
             }
 
@@ -87,9 +84,7 @@ namespace uClassManagers
                 }
                 else
                 {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("[uClassManagers] One of the array elements failed to parse! Numbers must only be 0 to 255 and not a string or an object. Check the array elements and try again.");
-                    Console.ResetColor();
+                    C.WriteError("One of the array elements failed to parse! Numbers must only be 0 to 255 and not a string or an object. Check the array elements and try again.");
                     return null;
                 }
             }
@@ -115,9 +110,7 @@ namespace uClassManagers
                 }
                 else
                 {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("[uClassManagers] One of the array elements failed to parse! Booleans must be only true or false and not a string or an object. Check the array elements and try again.");
-                    Console.ResetColor();
+                    C.WriteError("One of the array elements failed to parse! Booleans must be only true or false and not a string or an object. Check the array elements and try again.");
                     return null;
                 }
             }

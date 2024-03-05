@@ -145,13 +145,13 @@ namespace uClassManagers.Classes
         [ScriptFunction("ClientChooseDialogueResponse")]
         public void ClientChooseDialogueResponse(string assetGuid, byte index)
         {
-            playerQuests.ClientChooseDialogueResponse(Guid.Parse(assetGuid), index);
+            playerQuests.ClientChooseDialogueResponse(GuidTool.ParseGuid(assetGuid), index);
         }
 
         [ScriptFunction("ClientChooseNextDialogue")]
         public void ClientChooseNextDialogue(string assetGuid, byte index)
         {
-            playerQuests.ClientChooseNextDialogue(Guid.Parse(assetGuid), index);
+            playerQuests.ClientChooseNextDialogue(GuidTool.ParseGuid(assetGuid), index);
         }
 
         [ScriptFunction("ClientTrackQuest")]
@@ -268,7 +268,7 @@ namespace uClassManagers.Classes
         [ScriptFunction("sendBuyFromVendor")]
         public void SendBuyFromVendor(string assetGuid, byte index, bool asManyAsPossible)
         {
-            playerQuests.sendBuyFromVendor(Guid.Parse(assetGuid), index, asManyAsPossible);
+            playerQuests.sendBuyFromVendor(GuidTool.ParseGuid(assetGuid), index, asManyAsPossible);
         }
 
         [ScriptFunction("sendCreateGroup")]
@@ -328,7 +328,7 @@ namespace uClassManagers.Classes
         [ScriptFunction("sendSellToVendor")]
         public void SendSellToVendor(string assetGuid, byte index, bool asManyAsPossible)
         {
-            playerQuests.sendSellToVendor(Guid.Parse(assetGuid), index, asManyAsPossible);
+            playerQuests.sendSellToVendor(GuidTool.ParseGuid(assetGuid), index, asManyAsPossible);
         }
 
         [ScriptFunction("sendSetFlag")]
@@ -408,7 +408,7 @@ namespace uClassManagers.Classes
         [ScriptFunction("trackObjectKill")]
         public void TrackObjectKill(string objectGuid, byte nav)
         {
-            playerQuests.trackObjectKill(Guid.Parse(objectGuid), nav);
+            playerQuests.trackObjectKill(GuidTool.ParseGuid(objectGuid), nav);
         }
 
         [ScriptFunction("trackPlayerKill")]
@@ -426,7 +426,7 @@ namespace uClassManagers.Classes
         [ScriptFunction("trackTreeKill")]
         public void TrackTreeKill(string treeGuid)
         {
-            playerQuests.trackTreeKill(Guid.Parse(treeGuid));
+            playerQuests.trackTreeKill(GuidTool.ParseGuid(treeGuid));
         }
 
         [ScriptFunction("trackZombieKill")]

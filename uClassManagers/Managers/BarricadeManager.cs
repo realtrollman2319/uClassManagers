@@ -244,10 +244,10 @@ namespace uClassManagers.Managers
         }
 
         [ScriptFunction("serverSetStereoTrack")]
-        public static bool ServerSetStereoTrack(BarricadeClass stereo, string guidGiven)
+        public static bool ServerSetStereoTrack(BarricadeClass stereo, string track)
         {
             InteractableStereo interactableStereo = (InteractableStereo)BarricadeManager.FindBarricadeByRootTransform(stereo.BarricadeTransform).interactable;
-            bool hasSetTrack = BarricadeManager.ServerSetStereoTrack(interactableStereo, Guid.Parse(guidGiven));
+            bool hasSetTrack = BarricadeManager.ServerSetStereoTrack(interactableStereo, GuidTool.ParseGuid(track));
             return hasSetTrack;
         }
 

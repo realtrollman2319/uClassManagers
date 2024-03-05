@@ -38,5 +38,19 @@ namespace uClassManagers.Classes
 
         [ScriptFunction("use")]
         public void Use() => interactable.use();
+
+        [ScriptFunction("getInteractable")]
+        public ExpressionValue GetInteractable(string type)
+        {
+            InteractableType? _type = EnumTool.interactableTypes.GetEnum(type);
+            if (_type == null) return ExpressionValue.Null;
+            switch (_type.Value)
+            {
+                case InteractableType.STORAGE:
+                    return ExpressionValue.CreateObject(new InteractableStorageClass(interactable as InteractableStorage));
+                default:
+                    return ExpressionValue.Null;
+            }
+        }
     }
 }

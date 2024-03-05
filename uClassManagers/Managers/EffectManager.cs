@@ -26,13 +26,13 @@ namespace uClassManagers.Managers
         [ScriptFunction("clearEffectByGuid")]
         public static void ClearEffectByGuid(string guid, PlayerClass player)
         {
-            EffectManager.ClearEffectByGuid(Guid.Parse(guid), player.Player.channel.owner.transportConnection);
+            EffectManager.ClearEffectByGuid(GuidTool.ParseGuid(guid), player.Player.channel.owner.transportConnection);
         }
 
         [ScriptFunction("clearEffectByGuid_AllPlayers")]
         public static void ClearEffectByGuid_AllPlayers(string guid)
         {
-            EffectManager.ClearEffectByGuid_AllPlayers(Guid.Parse(guid));
+            EffectManager.ClearEffectByGuid_AllPlayers(GuidTool.ParseGuid(guid));
         }
 
         [ScriptFunction("clearEffectByID_AllPlayers")]
@@ -58,7 +58,7 @@ namespace uClassManagers.Managers
         [ScriptFunction("effect")]
         public static TransformClass Effect(string guid, Vector3Class point, Vector3Class normal, Vector3Class scaleMultiplier)
         {
-            Transform uEffect = EffectManager.effect(Guid.Parse(guid), point.Vector3, normal.Vector3, scaleMultiplier.Vector3);
+            Transform uEffect = EffectManager.effect(GuidTool.ParseGuid(guid), point.Vector3, normal.Vector3, scaleMultiplier.Vector3);
             return new TransformClass(uEffect);
         }
 
@@ -72,7 +72,7 @@ namespace uClassManagers.Managers
         [ScriptFunction("effect")]
         public static TransformClass Effect(string guid, Vector3Class point, Vector3Class normal)
         {
-            Transform uEffect = EffectManager.effect(Guid.Parse(guid), point.Vector3, normal.Vector3);
+            Transform uEffect = EffectManager.effect(GuidTool.ParseGuid(guid), point.Vector3, normal.Vector3);
             return new TransformClass(uEffect);
         }
 

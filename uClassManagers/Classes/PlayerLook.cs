@@ -141,9 +141,7 @@ namespace uClassManagers.Classes
             }
             else
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("uClassManagers module from uScript => Failed to cast item into sight asset! Check the item and try again.");
-                Console.ResetColor();
+                C.WriteError("Failed to cast item into sight asset! Check the item and try again.");
             }
         }
 

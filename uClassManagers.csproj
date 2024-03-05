@@ -92,6 +92,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="uClassManagers\Classes\BarricadeDrop.cs" />
+    <Compile Include="uClassManagers\GuidTool.cs" />
     <Compile Include="uClassManagers\Classes\Assets\AnimalAsset.cs" />
     <Compile Include="uClassManagers\Classes\Assets\Asset.cs" />
     <Compile Include="uClassManagers\Classes\Assets\EffectAsset.cs" />

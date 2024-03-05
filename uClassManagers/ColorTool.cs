@@ -18,9 +18,7 @@ namespace uClassManagers
             }
             else
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("[uClassManagers] Invalid hexadecimal color code! It must be between #000000 and #FFFFFF. Check the color code and try again.");
-                Console.ResetColor();
+                C.WriteError("Invalid hexadecimal color code! It must be between #000000 and #FFFFFF. Check the color code and try again.");
                 return null;
             }
         }

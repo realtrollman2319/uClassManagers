@@ -28,18 +28,19 @@ namespace uClassManagers.Modules
         {
             AssetType? assetType = EnumTool.assetTypes.GetEnum(type);
             if (assetType == null) return ExpressionValue.Null;
+            Guid parsedGuid = GuidTool.ParseGuid(guid);
             switch (assetType)
             {
                 case AssetType.ANIMAL:
-                    return ExpressionValue.CreateObject(new AnimalAssetClass(Assets.find<AnimalAsset>(Guid.Parse(guid))));
+                    return ExpressionValue.CreateObject(new AnimalAssetClass(Assets.find<AnimalAsset>(parsedGuid)));
                 case AssetType.EFFECT:
-                    return ExpressionValue.CreateObject(new EffectAssetClass(Assets.find<EffectAsset>(Guid.Parse(guid))));
+                    return ExpressionValue.CreateObject(new EffectAssetClass(Assets.find<EffectAsset>(parsedGuid)));
                 case AssetType.ITEM:
-                    return ExpressionValue.CreateObject(new ItemAssetClass(Assets.find<ItemAsset>(Guid.Parse(guid))));
+                    return ExpressionValue.CreateObject(new ItemAssetClass(Assets.find<ItemAsset>(parsedGuid)));
                 case AssetType.VEHICLE:
-                    return ExpressionValue.CreateObject(new VehicleAssetClass(Assets.find<VehicleAsset>(Guid.Parse(guid))));
+                    return ExpressionValue.CreateObject(new VehicleAssetClass(Assets.find<VehicleAsset>(parsedGuid)));
                 case AssetType.QUEST:
-                    return ExpressionValue.CreateObject(new QuestAssetClass(Assets.find<QuestAsset>(Guid.Parse(guid))));
+                    return ExpressionValue.CreateObject(new QuestAssetClass(Assets.find<QuestAsset>(parsedGuid)));
             }
             return ExpressionValue.Null;
         }
@@ -92,10 +93,10 @@ namespace uClassManagers.Modules
         public static AssetClass FindByAbsolutePath(string path) => new AssetClass(Assets.findByAbsolutePath(path));
 
         [ScriptFunction("findEffectAssetByGuidOrLegacyId")]
-        public static EffectAssetClass FindEffectAssetByGuidOrLegacyId(string guid, ushort legacyId) => new EffectAssetClass(Assets.FindEffectAssetByGuidOrLegacyId(Guid.Parse(guid), legacyId));
+        public static EffectAssetClass FindEffectAssetByGuidOrLegacyId(string guid, ushort legacyId) => new EffectAssetClass(Assets.FindEffectAssetByGuidOrLegacyId(GuidTool.ParseGuid(guid), legacyId));
 
         [ScriptFunction("findVehicleAssetByGuidOrLegacyId")]
-        public static VehicleAssetClass FindVehicleAssetByGuidOrLegacyId(string guid, ushort legacyId) => new VehicleAssetClass(Assets.FindVehicleAssetByGuidOrLegacyId(Guid.Parse(guid), legacyId));
+        public static VehicleAssetClass FindVehicleAssetByGuidOrLegacyId(string guid, ushort legacyId) => new VehicleAssetClass(Assets.FindVehicleAssetByGuidOrLegacyId(GuidTool.ParseGuid(guid), legacyId));
 
         [ScriptFunction("getReportedErrorsList")]
         public static ExpressionValue GetReportedErrorsList() => ExpressionValue.Array(Assets.getReportedErrorsList().Select(s => (ExpressionValue)s));

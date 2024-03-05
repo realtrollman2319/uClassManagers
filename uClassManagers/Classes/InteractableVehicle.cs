@@ -374,7 +374,7 @@ namespace uClassManagers.Classes
         [ScriptFunction("replaceBattery")]
         public void ReplaceBattery(PlayerClass player, byte quality, string newBatteryItemGuid)
         {
-            vehicle.replaceBattery(player.Player, quality, Guid.Parse(newBatteryItemGuid));
+            vehicle.replaceBattery(player.Player, quality, GuidTool.ParseGuid(newBatteryItemGuid));
         }
 
         [ScriptFunction("ResetDecayTimer")]

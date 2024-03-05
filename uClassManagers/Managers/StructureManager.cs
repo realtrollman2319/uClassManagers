@@ -54,7 +54,7 @@ namespace uClassManagers.Managers
         [ScriptFunction("dropReplicatedStructure")]
         public static bool DropReplicatedStructure(string guid, Vector3Class point, Vector3Class rotation, string owner, string group)
         {
-            ItemStructureAsset asset = Assets.find<ItemStructureAsset>(Guid.Parse(guid));
+            ItemStructureAsset asset = Assets.find<ItemStructureAsset>(GuidTool.ParseGuid(guid));
             bool hasDropped = StructureManager.dropReplicatedStructure(new Structure(asset, asset.health), point.Vector3, Quaternion.Euler(rotation.Vector3), ulong.Parse(owner), ulong.Parse(owner));
             return hasDropped;
         }

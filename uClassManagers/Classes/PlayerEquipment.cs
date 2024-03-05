@@ -233,7 +233,7 @@ namespace uClassManagers.Classes
         [ScriptFunction("ServerBindItemHotkey")]
         public void ServerBindItemHotkey(byte hotkeyIndex, string expectedItemGuid, byte page, byte x, byte y)
         {
-            playerEquipment.ServerBindItemHotkey(hotkeyIndex, SDG.Unturned.Assets.find<ItemAsset>(Guid.Parse(expectedItemGuid)), page, x, y);
+            playerEquipment.ServerBindItemHotkey(hotkeyIndex, SDG.Unturned.Assets.find<ItemAsset>(GuidTool.ParseGuid(expectedItemGuid)), page, x, y);
         }
 
         [ScriptFunction("ServerBindItemHotkey")]

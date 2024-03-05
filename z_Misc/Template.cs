@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using SDG.Unturned;
+using UnityEngine;
 using uScript.API.Attributes;
 
 namespace uClassManagers.Classes
@@ -10,6 +11,8 @@ namespace uClassManagers.Classes
         public xyzClass(xyz c_xyz) => xyz = c_xyz;
     }
 }
+
+
 
 /*
     [ScriptClass("xyz")]

@@ -83,10 +83,10 @@ namespace uClassManagers.Classes.Assets
         public string Build => itemBarricadeAsset.build.ToString();
 
         [ScriptProperty("explosionGuid")]
-        public string ExplosionGuid => itemBarricadeAsset.explosionGuid.ToString();
+        public string ExplosionGuid => itemBarricadeAsset.explosionGuid.ToString("N");
 
         [ScriptProperty("vehicleGuid")]
-        public string VehicleGuid => itemBarricadeAsset.VehicleGuid.ToString();
+        public string VehicleGuid => itemBarricadeAsset.VehicleGuid.ToString("N");
 
         [ScriptProperty("armorTier")]
         public string ArmorTier => itemBarricadeAsset.armorTier.ToString();
