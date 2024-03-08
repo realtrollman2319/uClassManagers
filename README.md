@@ -23,7 +23,7 @@ I'm free to add suggestions here, if you want something to be added here, make a
 I'm not the developer of uScript2, it's @strlng.<br/>
 I can't add syntax, or add more C# syntax (like LINQ) into uScript2.<br/>
 <br/>
-Incompatible modules:<br/>
+# Incompatible modules:
 [uEffectManager](https://discord.com/channels/578652868328947744/843614954514808882/1071731574254612541)<br/>
 <br/>
 If you have one of these, remove it. If you don't, uScript will refuse to load, and you'll be greeted with `Duplicate definition of x`.
