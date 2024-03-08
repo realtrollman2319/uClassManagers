@@ -1,4 +1,5 @@
 ﻿using SDG.Unturned;
+using uClassManagers.Classes.Assets;
 using UnityEngine;
 using uScript.API.Attributes;
 
@@ -13,13 +14,13 @@ namespace uClassManagers.Classes
         [ScriptProperty("model")]
         public TransformClass Model => new TransformClass(barricadeDrop.model);
 
-        [ScriptFunction("interactable")]
+        [ScriptProperty("interactable")]
         public InteractableClass Interactable => new InteractableClass(barricadeDrop.interactable);
 
         [ScriptProperty("instanceID")]
         public uint InstanceID => barricadeDrop.instanceID;
 
         [ScriptProperty("asset")]
-        public ItemBarricadeAsset Asset => barricadeDrop.asset;
+        public ItemBarricadeAssetClass Asset => new ItemBarricadeAssetClass(barricadeDrop.asset);
     }
 }
