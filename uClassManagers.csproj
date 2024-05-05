@@ -176,6 +176,7 @@
     <Compile Include="uClassManagers\Classes\PlayerWorkzone.cs" />
     <Compile Include="uClassManagers\Classes\uPlayer.cs" />
     <Compile Include="uClassManagers\Classes\Wheel.cs" />
+    <Compile Include="uClassManagers\StringExtension.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

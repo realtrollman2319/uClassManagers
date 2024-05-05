@@ -20,14 +20,12 @@ namespace uClassManagers
         {
             PrintLine($"[uClassManagers] {message}", ConsoleColor.DarkGray);
             Logs.printLine($"[Debug] {message}");
-            Logger.LogError(message);
         }
 
         public static void WriteInfo(string message)
         {
             PrintLine($"[uClassManagers] {message}", ConsoleColor.Cyan);
             Logs.printLine($"[Info] {message}");
-            Logger.LogError(message);
 
         }
         public static void WriteWarn(string message)
@@ -41,7 +39,6 @@ namespace uClassManagers
         {
             PrintLine($"[uClassManagers] {message}", ConsoleColor.Red);
             Logs.printLine($"[Error] {message}");
-            Logger.LogError(message);
         }
     }
 
