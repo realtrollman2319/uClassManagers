@@ -1,5 +1,6 @@
-﻿using SDG.Unturned;
+using SDG.Unturned;
 using System.IO;
+using System.Collections.Generic;
 using uScript.API.Attributes;
 
 namespace uClassManagers.Modules
@@ -31,6 +32,31 @@ namespace uClassManagers.Modules
             {
                 Directory.CreateDirectory($"{UnturnedPaths.RootDirectory.FullName}/Servers/{Provider.serverID}/uScript/Data/{directory}");
             }
+        }
+
+        [ScriptFunction("listFiles")]
+        public static List<string> ListFiles(string directory)
+        {
+            string fullPath;
+
+            if (Path.IsPathRooted(directory))
+            {
+                fullPath = directory;
+            }
+            else
+            {
+                fullPath = $"{UnturnedPaths.RootDirectory.FullName}/Servers/{Provider.serverID}/uScript/Data/{directory}";
+            }
+
+            List<string> fileList = new List<string>();
+
+            if (Directory.Exists(fullPath))
+            {
+                string[] files = Directory.GetFiles(fullPath);
+                fileList.AddRange(files);
+            }
+
+            return fileList;
         }
     }
 }
