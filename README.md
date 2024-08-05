@@ -26,7 +26,7 @@ I can't add syntax, or add more C# syntax (like LINQ) into uScript2.<br/>
 # Incompatible modules:
 [uEffectManager](https://discord.com/channels/578652868328947744/843614954514808882/1071731574254612541)<br/>
 <br/>
-If you have one of these, remove it. If you don't, uScript will refuse to load, and you'll be greeted with `Duplicate definition of x`.
+If you have one of these, remove it. If you don't, uScript will refuse to load, and you'll be greeted with `Duplicate definition for x`.
 You can still use it, just without this module.<br/>
 
 # Donations
