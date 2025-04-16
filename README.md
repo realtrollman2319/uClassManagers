@@ -7,7 +7,7 @@ Unturned's `static` managers (VehicleManager, ItemManager, etc.)<br/>
 
 # Why are there no events?
 I've decided to not add events on the module because sometimes, it can be laggy if I did so.
-I'll add it on a seperate module, but that's going to be for another time.
+I'll add it on a separate module, but that's going to be for another time.
 For the meantime, use [uScriptExtended](https://github.com/MolyiEZ/uScriptExtended) for now.
 
 # Note
